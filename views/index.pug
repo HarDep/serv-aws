@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title Lista de Usuarios
+  body
+    h1 Lista de Usuarios (Página #{page})
+    ul
+      each user in users
+        li #{user.id} - #{user.username}
+    
+    div
+      if page > 1
+        a(href=`/?page=${page-1}`) Anterior
+      |  
+      a(href=`/?page=${page+1}`) Siguiente
