@@ -1,10 +1,12 @@
 import mysql from "mysql2/promise";
+import dotenv from "dotenv";
+dotenv.config();
 
 const poolData = {
-  host: 'localhost',
-  user: 'root',
-  password: 'root',
-  database: 'usuarios_db'
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
 };
 
 export async function getUsers(page = 1, limit = 10) {
